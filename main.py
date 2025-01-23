@@ -2,6 +2,7 @@
  
 import pyodbc
 from fastapi import FastAPI
+import uvicorn
  
 app = FastAPI()
  
@@ -54,3 +55,7 @@ def get_end2():
  
     except Exception as e:
         return {"error": str(e)}
+    
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='127.0.0.1', port=8000)
